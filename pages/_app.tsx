@@ -1,15 +1,15 @@
-import * as Fathom from 'fathom-client';
-import { DefaultSeo } from 'next-seo';
-import App from 'next/app';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
-import { SWRConfig } from 'swr';
-import { KonamiCode } from '../components/KonamiCode';
-import { getMenuItems } from '../data/menuItem';
-import { useCanonicalURL } from '../data/seo';
-import { projectStrings } from '../data/site';
-import '../styles/globals.css';
-import { doNotFetch } from '../utils/swr';
+import * as Fathom from 'fathom-client'
+import { DefaultSeo } from 'next-seo'
+import App from 'next/app'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import { SWRConfig } from 'swr'
+import { KonamiCode } from '../components/KonamiCode'
+import { getMenuItems } from '../data/menuItem'
+import { useCanonicalURL } from '../data/seo'
+import { projectStrings } from '../data/site'
+import '../styles/globals.css'
+import { doNotFetch } from '../utils/swr'
 
 function MyApp({ Component, pageProps, headerLinks, footerLinks }) {
   const canonicalURL = useCanonicalURL()
@@ -71,7 +71,7 @@ function MyApp({ Component, pageProps, headerLinks, footerLinks }) {
 }
 
 MyApp.getInitialProps = async (appContext) => {
-  const appProps = await App.getInitialProps(appContext);
+  const appProps = await App.getInitialProps(appContext)
   const links = await getMenuItems()
   return {
     ...appProps,
